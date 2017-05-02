@@ -9,7 +9,7 @@
     <groupId>com.sendgrid</groupId>
     <artifactId>sendgrid-java</artifactId>
     <name>SendGrid Java helper library</name>
-    <version>3.2.1</version>
+    <version>3.2.1-tinyclues1</version>
     <description>This Java module allows you to quickly and easily send emails through SendGrid using Java.</description>
     <url>https://github.com/sendgrid/sendgrid-java</url>
     <licenses>
@@ -19,6 +19,21 @@
         <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <distributionManagement>
+    <repository>
+      <id>tinyclues-release</id>
+      <name>Tinyclues Release Repository</name>
+      <url>s3://sf-repo-jar-e64d87d322660c184242a7270bcfd377/release</url>
+    </repository>
+    <snapshotRepository>
+      <id>tinyclues-snapshot</id>
+      <name>Tinyclues Snapshot Repository</name>
+      <url>s3://sf-repo-jar-e64d87d322660c184242a7270bcfd377/snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
     <scm>
         <url>https://github.com/sendgrid/sendgrid-java</url>
         <connection>scm:git:git@github.com:sendgrid/sendgrid-java.git</connection>
@@ -75,6 +90,14 @@
                 </executions>
             </plugin>
         </plugins>
+
+        <extensions>
+          <extension>
+            <groupId>org.springframework.build</groupId>
+            <artifactId>aws-maven</artifactId>
+            <version>5.0.0.RELEASE</version>
+          </extension>
+        </extensions>
     </build>
     <developers>
         <developer>

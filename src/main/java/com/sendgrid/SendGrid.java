@@ -3,11 +3,12 @@ package com.sendgrid;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.Serializable;
 
 /**
   * Class SendGrid allows for quick and easy access to the SendGrid API.
   */
-public class SendGrid {
+public class SendGrid implements Serializable {
   private static final String VERSION = "3.0.0";
   private static final String USER_AGENT = "sendgrid/" + VERSION + ";java";
 
